@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.thinkingstudio.createrecipereicompatibility.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SequencedAssemblyRecipeMixin"
+  ],
+  "client": [
+    "BasinCategoryMixin",
+    "CreateDisplayMixin",
+    "CrushingCategoryMixin",
+    "AssemblySpoutingMixin",
+    "MillingCategoryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
