@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.inject;
+package ho.artisan.createreibugfix.inject;
 
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
@@ -34,7 +34,7 @@ import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.minecraft.recipe.Recipe;
 import org.jetbrains.annotations.ApiStatus;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
-import ho.artisan.createandreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.api.REICreates;
 
 import java.util.LinkedList;
 import java.util.List;

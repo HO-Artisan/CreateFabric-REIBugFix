@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.inject;
+package ho.artisan.createreibugfix.inject;
 
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.rei.category.CrushingCategory;
@@ -33,7 +33,7 @@ import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.util.collection.DefaultedList;
-import ho.artisan.createandreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.api.REICreates;
 
 import java.util.List;
 

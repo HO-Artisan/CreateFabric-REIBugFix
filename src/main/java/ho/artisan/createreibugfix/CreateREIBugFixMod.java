@@ -1,6 +1,6 @@
 /*
- * This file is licensed under the MIT License, part of Create's Delight.
- * Copyright (c) 2021~2023 Phoupraw
+ * This file is licensed under the MIT License, part of CreateFabricRecipeREICompatibility.
+ * Copyright (c) 2023 TexTrue, ThinkingStudio
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,24 +21,19 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.inject;
+package ho.artisan.createreibugfix;
 
-import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
-import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
-import org.jetbrains.annotations.ApiStatus;
+import net.fabricmc.api.ModInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.List;
+public class CreateREIBugFixMod implements ModInitializer {
+	public static final String MODID = "createreibugfix";
+	public static final String MODNAME = "Create&REIBugFix";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MODNAME);
 
-@ApiStatus.Internal
-public final class SequencedAssemblyRecipeInject {
-    public interface Interface {
-        static List<ProcessingOutput> getResultPool(SequencedAssemblyRecipe self) {
-            return ((Interface) self).getResultPool();
-        }
-        List<ProcessingOutput> getResultPool();
-    }
-
-    private SequencedAssemblyRecipeInject() {
-
-    }
+	@Override
+	public void onInitialize() {
+		LOGGER.info(MODNAME + " (" + MODID + ") " + " is loaded!");
+	}
 }
