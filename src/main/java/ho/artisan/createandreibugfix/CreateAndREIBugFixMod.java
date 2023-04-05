@@ -21,15 +21,15 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility;
+package ho.artisan.createandreibugfix;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CreateFabricRecipeREICompatibilityMod implements ModInitializer {
-	public static final String MODID = "createrecipereicompatibility";
-	public static final String MODNAME = "CreateFabricRecipeREICompatibility";
+public class CreateAndREIBugFixMod implements ModInitializer {
+	public static final String MODID = "createandreibugfix";
+	public static final String MODNAME = "Create&REIBugFix";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MODNAME);
 
 	@Override

@@ -1,33 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "createrecipereicompatibility",
+  "id": "createandreibugfix",
   "version": "${version}",
-  "name": "CreateFabricRecipeREICompatibility",
+  "name": "CreateFabric&REIBugFix",
   "description": "Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Phoupraw.",
   "authors": [
     "TexTrue, ThinkingStudio, Phoupraw"
   ],
   "contact": {
-    "homepage": "https://github.com/TexTrueStudio/CreateFabricRecipeREICompatibility",
-    "sources": "https://github.com/TexTrueStudio/CreateFabricRecipeREICompatibility"
+    "homepage": "https://github.com/HO-Artisan/Create-REIBugFix",
+    "sources": "https://github.com/HO-Artisan/Create-REIBugFix"
   },
   "license": "MIT",
-  "icon": "assets/createrecipereicompatibility/icon.png",
+  "icon": "assets/createandreibugfix/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.thinkingstudio.createrecipereicompatibility.CreateFabricRecipeREICompatibilityMod"
+      "ho.artisan.createandreibugfix.CreateAndREIBugFixMod"
     ]
   },
   "mixins": [
-    "createrecipereicompatibility.mixins.json"
+    "createandreibugfix.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.x",
+    "fabricloader": "*",
     "fabric-api": "*",
     "minecraft": "1.19.x",
     "java": ">=17",
-    "rei": "*",
+    "roughlyenoughitems": "*",
     "create": "*"
   },
   "breaks": {
