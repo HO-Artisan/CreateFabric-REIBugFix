@@ -1,6 +1,6 @@
 # CreateFabricRecipeREICompatibility
 
-Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Phoupraw.
+Fix CreateFabric Recipe display on REI issues. Code from [Create's Delight Fabric](https://github.com/Phoupraw/CreateSDelightFabricJava) by Phoupraw.
 
 ## Code references
 
@@ -9,4 +9,4 @@ Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Pho
 
 ## License
 
-This mod is available under the MIT license.
+This mod is available under [the MIT license](LICENSE).
