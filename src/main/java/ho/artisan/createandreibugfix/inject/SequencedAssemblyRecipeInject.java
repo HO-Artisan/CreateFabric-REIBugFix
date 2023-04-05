@@ -21,23 +21,24 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility.mixin;
+package ho.artisan.createandreibugfix.inject;
 
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.thinkingstudio.createrecipereicompatibility.inject.SequencedAssemblyRecipeInject;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.util.List;
 
-@Mixin(SequencedAssemblyRecipe.class)
-public abstract class SequencedAssemblyRecipeMixin implements SequencedAssemblyRecipeInject.Interface {
-    @Shadow(remap = false)
-    protected List<ProcessingOutput> resultPool;
+@ApiStatus.Internal
+public final class SequencedAssemblyRecipeInject {
+    public interface Interface {
+        static List<ProcessingOutput> getResultPool(SequencedAssemblyRecipe self) {
+            return ((Interface) self).getResultPool();
+        }
+        List<ProcessingOutput> getResultPool();
+    }
 
-    @Override
-    public List<ProcessingOutput> getResultPool() {
-        return resultPool;
+    private SequencedAssemblyRecipeInject() {
+
     }
 }

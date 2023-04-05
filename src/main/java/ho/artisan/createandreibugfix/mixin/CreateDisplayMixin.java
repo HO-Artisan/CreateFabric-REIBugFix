@@ -21,24 +21,21 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility.inject;
+package ho.artisan.createandreibugfix.mixin;
 
-import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
-import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
-import org.jetbrains.annotations.ApiStatus;
+import com.simibubi.create.compat.rei.display.CreateDisplay;
+import ho.artisan.createandreibugfix.inject.CreateDisplayInject;
+import me.shedaniel.rei.api.common.category.CategoryIdentifier;
+import net.minecraft.recipe.Recipe;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
-import java.util.List;
-
-@ApiStatus.Internal
-public final class SequencedAssemblyRecipeInject {
-    public interface Interface {
-        static List<ProcessingOutput> getResultPool(SequencedAssemblyRecipe self) {
-            return ((Interface) self).getResultPool();
-        }
-        List<ProcessingOutput> getResultPool();
-    }
-
-    private SequencedAssemblyRecipeInject() {
-
+@Mixin(CreateDisplay.class)
+public abstract class CreateDisplayMixin {
+    @ModifyArgs(method = "<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;)V", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/compat/rei/display/CreateDisplay;<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;Ljava/util/List;Ljava/util/List;)V"))
+    private static void improveStupidDisplay(Args args, Recipe<?> recipe, CategoryIdentifier<CreateDisplay<Recipe<?>>> id) {
+        CreateDisplayInject.improveStupidDisplay(args, recipe, id);
     }
 }

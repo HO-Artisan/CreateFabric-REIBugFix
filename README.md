@@ -1,4 +1,4 @@
-# CreateFabricRecipeREICompatibility
+# CreateFabric&REIBugFix
 
 Fix CreateFabric Recipe display on REI issues. Code from [Create's Delight Fabric](https://github.com/Phoupraw/CreateSDelightFabricJava) by Phoupraw.
 

@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility.inject;
+package ho.artisan.createandreibugfix.inject;
 
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
@@ -34,7 +34,7 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.collection.DefaultedList;
-import org.thinkingstudio.createrecipereicompatibility.api.REICreates;
+import ho.artisan.createandreibugfix.api.REICreates;
 
 import java.util.List;
 

@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility.api;
+package ho.artisan.createandreibugfix.api;
 
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;

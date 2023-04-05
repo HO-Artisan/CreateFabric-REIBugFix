@@ -21,10 +21,11 @@
  * SOFTWARE.
  */
 
-package org.thinkingstudio.createrecipereicompatibility.mixin;
+package ho.artisan.createandreibugfix.mixin;
 
 import com.simibubi.create.compat.rei.category.sequencedAssembly.ReiSequencedAssemblySubCategory;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
+import ho.artisan.createandreibugfix.api.REICreates;
 import me.shedaniel.math.Point;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import net.fabricmc.api.EnvType;
@@ -34,7 +35,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
-import org.thinkingstudio.createrecipereicompatibility.api.REICreates;
 
 import java.util.List;
 
