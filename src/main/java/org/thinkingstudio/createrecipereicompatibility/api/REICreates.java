@@ -58,12 +58,14 @@ public final class REICreates {
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> ingredientsOf(@NotNull ProcessingRecipe<?> recipe) {
+    @NotNull
+    public static List<EntryIngredient> ingredientsOf(@NotNull ProcessingRecipe<?> recipe) {
         return ingredientsOf(recipe.getIngredients(), recipe.getFluidIngredients());
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> ingredientsOf(@NotNull SequencedRecipe<?> recipe0) {
+    @NotNull
+    public static List<EntryIngredient> ingredientsOf(@NotNull SequencedRecipe<?> recipe0) {
         ProcessingRecipe<?> recipe = recipe0.getRecipe();
         DefaultedList<Ingredient> ingredients = DefaultedList.of();
         ingredients.addAll(recipe.getIngredients());
@@ -72,74 +74,59 @@ public final class REICreates {
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> ingredientsOf(@NotNull DefaultedList<Ingredient> ingredients, @NotNull DefaultedList<FluidIngredient> fluidIngredients) {
-        List<EntryIngredient> list = new LinkedList();
-        Iterator var3 = ItemHelper.condenseIngredients(ingredients).iterator();
-
-        while(var3.hasNext()) {
-            Pair<Ingredient, MutableInt> condensed = (Pair)var3.next();
-            Collection<ItemConvertible> items = new LinkedList();
-            ItemStack[] var6 = ((Ingredient)condensed.getFirst()).getMatchingStacks();
-            int var7 = var6.length;
-
-            for(int var8 = 0; var8 < var7; ++var8) {
-                ItemStack matchingStack = var6[var8];
+    @NotNull
+    public static List<EntryIngredient> ingredientsOf(@NotNull DefaultedList<Ingredient> ingredients, @NotNull DefaultedList<FluidIngredient> fluidIngredients) {
+        List<EntryIngredient> list = new LinkedList<>();
+        for (Pair<Ingredient, MutableInt> condensed : ItemHelper.condenseIngredients(ingredients)) {
+            Collection<ItemConvertible> items = new LinkedList<>();
+            for (ItemStack matchingStack : (condensed.getFirst()).getMatchingStacks()) {
                 items.add(matchingStack.getItem());
             }
-
-            list.add(EntryIngredients.ofItems(items, ((MutableInt)condensed.getSecond()).getValue()));
+            list.add(EntryIngredients.ofItems(items, (condensed.getSecond()).getValue()));
         }
-
-        var3 = fluidIngredients.iterator();
-
-        while(var3.hasNext()) {
-            FluidIngredient fluidIngredient = (FluidIngredient)var3.next();
-            list.add(ingredientOf(fluidIngredient));
+        Iterator<FluidIngredient> it = fluidIngredients.iterator();
+        while (it.hasNext()) {
+            list.add(ingredientOf(it.next()));
         }
-
         return list;
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> resultsOf(@NotNull ProcessingRecipe<?> recipe) {
+    @NotNull
+    public static List<EntryIngredient> resultsOf(@NotNull ProcessingRecipe<?> recipe) {
         return resultsOf(recipe.getRollableResults(), recipe.getFluidResults());
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> resultsOf(@NotNull SequencedRecipe<?> recipe0) {
+    @NotNull
+    public static List<EntryIngredient> resultsOf(@NotNull SequencedRecipe<?> recipe0) {
         ProcessingRecipe<?> recipe = recipe0.getRecipe();
-        LinkedList<ProcessingOutput> rollableResults = new LinkedList(recipe.getRollableResults());
+        LinkedList<ProcessingOutput> rollableResults = new LinkedList<>(recipe.getRollableResults());
         rollableResults.remove(0);
         return resultsOf(rollableResults, recipe.getFluidResults());
     }
 
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> resultsOf(@NotNull List<ProcessingOutput> rollableResults, @NotNull DefaultedList<FluidStack> fluidResults) {
-        List<EntryIngredient> list = new LinkedList();
-        Iterator var3 = rollableResults.iterator();
-
-        while(var3.hasNext()) {
-            ProcessingOutput rollableResult = (ProcessingOutput)var3.next();
+    @NotNull
+    public static List<EntryIngredient> resultsOf(@NotNull List<ProcessingOutput> rollableResults, @NotNull DefaultedList<FluidStack> fluidResults) {
+        List<EntryIngredient> list = new LinkedList<>();
+        for (ProcessingOutput rollableResult : rollableResults) {
             list.add(EntryIngredients.of(rollableResult.getStack().copy()));
         }
-
-        var3 = fluidResults.iterator();
-
-        while(var3.hasNext()) {
-            FluidStack fluidResult = (FluidStack)var3.next();
+        Iterator<FluidStack> it = fluidResults.iterator();
+        while (it.hasNext()) {
+            FluidStack fluidResult = it.next();
             list.add(EntryIngredients.of(dev.architectury.fluid.FluidStack.create(fluidResult.getFluid(), fluidResult.getAmount(), fluidResult.getTag())));
         }
-
         return list;
     }
 
     public static Slot slotOf(Point pos, Collection<EntryStack<?>> entries) {
         Slot slot = Widgets.createSlot(pos).entries(entries);
-        if (((EntryStack)entries.iterator().next()).getValue() instanceof dev.architectury.fluid.FluidStack) {
+        if (entries.iterator().next().getValue() instanceof dev.architectury.fluid.FluidStack) {
             CreateRecipeCategory.setFluidRenderRatio(slot);
             CreateRecipeCategory.setFluidTooltip(slot);
         }
-
         return slot;
     }
 

@@ -34,6 +34,6 @@ public class CreateFabricRecipeREICompatibilityMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		LOGGER.info(MODNAME + " (" + MODID + ") " + " is loaded!");
 	}
 }
