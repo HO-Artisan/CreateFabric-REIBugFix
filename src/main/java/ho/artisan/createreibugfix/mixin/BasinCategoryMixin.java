@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.mixin;
+package ho.artisan.createreibugfix.mixin;
 
 import com.simibubi.create.compat.rei.category.BasinCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
@@ -43,7 +43,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import ho.artisan.createandreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.api.REICreates;
 
 import java.util.List;
 

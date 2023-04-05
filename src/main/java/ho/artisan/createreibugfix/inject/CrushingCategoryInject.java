@@ -21,13 +21,13 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.inject;
+package ho.artisan.createreibugfix.inject;
 
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.rei.category.CrushingCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.contraptions.components.crusher.AbstractCrushingRecipe;
-import ho.artisan.createandreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.api.REICreates;
 import io.github.fabricators_of_create.porting_lib.util.FluidStack;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;

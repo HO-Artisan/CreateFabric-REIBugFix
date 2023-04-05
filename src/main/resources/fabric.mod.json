@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "createandreibugfix",
+  "id": "createreibugfix",
   "version": "${version}",
   "name": "CreateFabric&REIBugFix",
   "description": "Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Phoupraw.",
@@ -12,15 +12,15 @@
     "sources": "https://github.com/HO-Artisan/Create-REIBugFix"
   },
   "license": "MIT",
-  "icon": "assets/createandreibugfix/icon.png",
+  "icon": "assets/createreibugfix/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ho.artisan.createandreibugfix.CreateAndREIBugFixMod"
+      "ho.artisan.createreibugfix.CreateREIBugFixMod"
     ]
   },
   "mixins": [
-    "createandreibugfix.mixins.json"
+    "createreibugfix.mixins.json"
   ],
   "depends": {
     "fabricloader": "*",

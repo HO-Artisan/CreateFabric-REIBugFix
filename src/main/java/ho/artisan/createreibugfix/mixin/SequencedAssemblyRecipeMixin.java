@@ -21,21 +21,23 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.mixin;
+package ho.artisan.createreibugfix.mixin;
 
-import com.simibubi.create.compat.rei.display.CreateDisplay;
-import ho.artisan.createandreibugfix.inject.CreateDisplayInject;
-import me.shedaniel.rei.api.common.category.CategoryIdentifier;
-import net.minecraft.recipe.Recipe;
+import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
+import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArgs;
-import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
+import org.spongepowered.asm.mixin.Shadow;
+import ho.artisan.createreibugfix.inject.SequencedAssemblyRecipeInject;
 
-@Mixin(CreateDisplay.class)
-public abstract class CreateDisplayMixin {
-    @ModifyArgs(method = "<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;)V", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/compat/rei/display/CreateDisplay;<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;Ljava/util/List;Ljava/util/List;)V"))
-    private static void improveStupidDisplay(Args args, Recipe<?> recipe, CategoryIdentifier<CreateDisplay<Recipe<?>>> id) {
-        CreateDisplayInject.improveStupidDisplay(args, recipe, id);
+import java.util.List;
+
+@Mixin(SequencedAssemblyRecipe.class)
+public abstract class SequencedAssemblyRecipeMixin implements SequencedAssemblyRecipeInject.Interface {
+    @Shadow(remap = false)
+    protected List<ProcessingOutput> resultPool;
+
+    @Override
+    public List<ProcessingOutput> getResultPool() {
+        return resultPool;
     }
 }

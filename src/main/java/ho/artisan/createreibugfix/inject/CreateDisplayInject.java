@@ -21,14 +21,14 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createandreibugfix.inject;
+package ho.artisan.createreibugfix.inject;
 
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
 import com.simibubi.create.content.contraptions.processing.ProcessingRecipe;
-import ho.artisan.createandreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.api.REICreates;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
