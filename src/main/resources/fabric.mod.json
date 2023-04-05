@@ -31,7 +31,6 @@
     "create": "*"
   },
   "breaks": {
-    "phouprawscommon": "*",
     "createsdelight": "*"
   }
 }
