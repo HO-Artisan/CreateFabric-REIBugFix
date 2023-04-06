@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://cdn.modrinth.com/data/lSw4RpVn/f137c369d4128813c75ff83170295f38f721512d.png" alt="CreateFabric&REIBugFix Icon"/>
+<img height="200" width="200" src="https://cdn.modrinth.com/data/lSw4RpVn/f137c369d4128813c75ff83170295f38f721512d.png" alt="CreateFabric&REIBugFix Icon"/>
 
 # CreateFabric&REIBugFix
 
