@@ -1,6 +1,12 @@
+<div align="center">
+
+<img src="https://cdn.modrinth.com/data/lSw4RpVn/f137c369d4128813c75ff83170295f38f721512d.png" alt="CreateFabric&REIBugFix Icon"/>
+
 # CreateFabric&REIBugFix
 
 Fix CreateFabric Recipe display on REI issues. Code from [Create's Delight Fabric](https://github.com/Phoupraw/CreateSDelightFabricJava) by Phoupraw.
+
+</div>
 
 ## Code references
 
