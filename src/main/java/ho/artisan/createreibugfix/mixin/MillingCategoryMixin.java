@@ -27,6 +27,9 @@ import com.simibubi.create.compat.rei.category.MillingCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.contraptions.components.crusher.AbstractCrushingRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
+import ho.artisan.createreibugfix.utils.StringUtils;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
@@ -41,6 +44,7 @@ import ho.artisan.createreibugfix.inject.MillingCategoryInject;
 
 import java.util.List;
 
+@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(MillingCategory.class)
 @Environment(EnvType.CLIENT)
 public abstract class MillingCategoryMixin {

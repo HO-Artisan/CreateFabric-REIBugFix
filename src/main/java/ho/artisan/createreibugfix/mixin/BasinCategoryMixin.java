@@ -28,7 +28,10 @@ import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.contraptions.processing.BasinRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.utility.Pair;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
+import ho.artisan.createreibugfix.utils.StringUtils;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import me.shedaniel.math.Point;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
@@ -47,6 +50,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
 
+@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(BasinCategory.class)
 @Environment(EnvType.CLIENT)
 public class BasinCategoryMixin {
@@ -59,6 +63,6 @@ public class BasinCategoryMixin {
 
     @Redirect(method = "addWidgets", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/api/common/util/EntryIngredients;of(Ldev/architectury/fluid/FluidStack;)Lme/shedaniel/rei/api/common/entry/EntryIngredient;", ordinal = 0, remap = false), remap = false)
     private EntryIngredient fixFluidIngredient(dev.architectury.fluid.FluidStack stack) {
-        return REICreates.ingredientOf(fluidIngredient.get());
+        return REICreateUtils.ingredientOf(fluidIngredient.get());
     }
 }

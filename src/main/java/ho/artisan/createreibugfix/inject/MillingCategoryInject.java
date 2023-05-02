@@ -34,7 +34,7 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.collection.DefaultedList;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public interface MillingCategoryInject {
         int outputIndex = display.getRecipe().getRollableResults().size();
         int xOffset = outputIndex % 2 == 0 ? 0 : 19;
         int yOffset = (outputIndex / 2) * -19;
-        widgets.add(REICreates.slotOf(new Point((origin.x + 133 + xOffset) + 1, (origin.y + 27 + yOffset) + 1), List.of(EntryStacks.of(CreateRecipeCategory.convertToREIFluid(fluidResults.get(0)))))
+        widgets.add(REICreateUtils.slotOf(new Point((origin.x + 133 + xOffset) + 1, (origin.y + 27 + yOffset) + 1), List.of(EntryStacks.of(CreateRecipeCategory.convertToREIFluid(fluidResults.get(0)))))
                 .markOutput());
     }
 }

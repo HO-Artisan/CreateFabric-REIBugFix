@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createreibugfix.api;
+package ho.artisan.createreibugfix.utils;
 
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
@@ -50,12 +50,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+
 /**
- 和机械动力有关的REI工具方法。
+ The REI tool method related to Create.
  @since 1.0.0
  @author Phoupraw
  */
-public final class REICreates {
+public final class REICreateUtils {
     /**
      @see CreateRecipeCategory#convertToREIFluids(List)
      @since 1.0.0
@@ -67,7 +68,7 @@ public final class REICreates {
     }
 
     /**
-     @return 包含物品原料和流体原料的列表
+     @return Contains a list of item ingredients and fluid ingredients
      @see EntryIngredients#ofIngredients(List)
      @see #ingredientOf(FluidIngredient)
      @see Recipe#getIngredients()
@@ -114,7 +115,7 @@ public final class REICreates {
     }
 
     /**
-     @return 包含 {@link ProcessingRecipe#getRollableResults()}和{@link ProcessingRecipe#getFluidResults()}。
+     @return Contains {@link ProcessingRecipe#getRollableResults()} and {@link ProcessingRecipe#getFluidResults()}.
      @see EntryIngredients#of(ItemStack)
      @see EntryIngredients#of(FluidStack)
      @since 1.0.0
@@ -154,14 +155,14 @@ public final class REICreates {
     }
 
     /**
-     如果是流体：
+     In fluids:
      <ul>
-     <li>如果不满一桶，则不会渲染完整一格，而是根据数量减少流体格高度，见{@link CreateRecipeCategory#setFluidRenderRatio}。
-     <li>工具提示中以mB为单位，见{@link CreateRecipeCategory#setFluidTooltip}。
+     <li>If there is less than one bucket, the complete frame is not rendered, but the height of the fluid frame is reduced according to the number, see {@link CreateRecipeCategory#setFluidRenderRatio}.
+     <li>The tooltip is in "mB", see {@link CreateRecipeCategory#setFluidTooltip}.
      </ul>
-     如果是物品：与{@link Widgets#createSlot(Point)}完全相同。
-     @param pos {@link Widgets#createSlot(Point)}的参数
-     @param entries 可以为{@link EntryIngredient}。
+     If it is an item: exactly the same as {@link Widgets#createSlot(Point)}.
+     @param pos Parameters of {@link Widgets#createSlot(Point)}
+     @param entries can be {@link EntryIngredient}.
      @see #ingredientsOf
      @see #resultsOf
      @since 1.0.0
@@ -176,7 +177,7 @@ public final class REICreates {
         return slot;
     }
 
-    private REICreates() {
+    private REICreateUtils() {
 
     }
 }

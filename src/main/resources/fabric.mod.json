@@ -5,7 +5,7 @@
   "name": "CreateFabric&REIBugFix",
   "description": "Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Phoupraw.",
   "authors": [
-    "TexTrue, ThinkingStudio, Phoupraw"
+    "TexTrue, HO-Artisan, Phoupraw"
   ],
   "contact": {
     "homepage": "https://github.com/HO-Artisan/Create-REIBugFix",
@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ho.artisan.createreibugfix.CreateREIBugFixMod"
+      "ho.artisan.createreibugfix.CreateFabricREIBugFixMod"
     ]
   },
   "mixins": [

@@ -25,7 +25,10 @@ package ho.artisan.createreibugfix.mixin;
 
 import com.simibubi.create.compat.rei.category.sequencedAssembly.ReiSequencedAssemblySubCategory;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
+import ho.artisan.createreibugfix.utils.StringUtils;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import me.shedaniel.math.Point;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import net.fabricmc.api.EnvType;
@@ -38,10 +41,11 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 import java.util.List;
 
+@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(ReiSequencedAssemblySubCategory.AssemblySpouting.class)
 @Environment(EnvType.CLIENT)
 public class AssemblySpoutingMixin {
-//    @Redirect(method = "addFluidIngredients", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/api/common/util/EntryIngredients;of(Ldev/architectury/fluid/FluidStack;)Lme/shedaniel/rei/api/common/entry/EntryIngredient;"))
+//    @Redirect(method = "addFluidIngredients", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/utils/common/util/EntryIngredients;of(Ldev/architectury/fluid/FluidStack;)Lme/shedaniel/rei/utils/common/entry/EntryIngredient;"))
 //    private EntryIngredient fixInexplicableCode(FluidStack stack, SequencedRecipe<?> recipe, List<Widget> widgets, int x, int index, Point origin) {
 //        return PanFryingDisplay.of(recipe.getRecipe().getFluidIngredients().get(0));
 //    }
@@ -53,6 +57,6 @@ public class AssemblySpoutingMixin {
 
     @ModifyArgs(method = "addFluidIngredients", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/api/client/gui/widgets/Slot;entries(Ljava/util/Collection;)Lme/shedaniel/rei/api/client/gui/widgets/Slot;"))
     private void fluidIngredientToREI(Args args, SequencedRecipe<?> recipe, List<Widget> widgets, int x, int index, Point origin) {
-        args.set(0, REICreates.ingredientOf(recipe.getRecipe().getFluidIngredients().get(0)));
+        args.set(0, REICreateUtils.ingredientOf(recipe.getRecipe().getFluidIngredients().get(0)));
     }
 }

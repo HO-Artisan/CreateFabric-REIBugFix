@@ -1,6 +1,6 @@
 /*
- * This file is licensed under the MIT License, part of CreateFabricRecipeREICompatibility.
- * Copyright (c) 2023 TexTrue, ThinkingStudio
+ * This file is licensed under the MIT License, part of CreateFabric&REIBugFix.
+ * Copyright (c) 2023 TexTrue, HO-Artisan
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,17 +23,20 @@
 
 package ho.artisan.createreibugfix;
 
+import ho.artisan.createreibugfix.utils.StringUtils;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CreateREIBugFixMod implements ModInitializer {
-	public static final String MODID = "createreibugfix";
-	public static final String MODNAME = "Create&REIBugFix";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MODNAME);
+public class CreateFabricREIBugFixMod implements ModInitializer {
+	public static final Logger LOGGER = LoggerFactory.getLogger(StringUtils.MODNAME);
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info(MODNAME + " (" + MODID + ") " + " is loaded!");
+		LOGGER.info(StringUtils.MODNAME + " (" + StringUtils.MODID + ") " + " is loaded!");
+		if (FabricLoader.getInstance().isModLoaded(StringUtils.createsdelight_modid)) {
+			LOGGER.warn(StringUtils.MODNAME + "incompatibility with Creates Delight!");
+		}
 	}
 }

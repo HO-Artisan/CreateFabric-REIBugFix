@@ -33,7 +33,7 @@ import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.util.collection.DefaultedList;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public interface CrushingCategoryInject {
         int size = display.getRecipe().getRollableResults().size() + 1;
         int outputIndex = size - 1;
         int offset = -size * 19 / 2;
-        widgets.add(REICreates.slotOf(new Point((origin.x + category.getDisplayWidth(display) / 2 + offset + 19 * outputIndex) + 1, origin.y + 78 + 1), List.of(EntryStacks.of(CreateRecipeCategory.convertToREIFluid(fluidResults.get(0)))))
+        widgets.add(REICreateUtils.slotOf(new Point((origin.x + category.getDisplayWidth(display) / 2 + offset + 19 * outputIndex) + 1, origin.y + 78 + 1), List.of(EntryStacks.of(CreateRecipeCategory.convertToREIFluid(fluidResults.get(0)))))
                 .markOutput());
     }
 }

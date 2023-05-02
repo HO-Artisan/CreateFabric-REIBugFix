@@ -34,7 +34,7 @@ import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.minecraft.recipe.Recipe;
 import org.jetbrains.annotations.ApiStatus;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -42,21 +42,21 @@ import java.util.List;
 @ApiStatus.Internal
 public final class CreateDisplayInject {
     /**
-     把{@link ProcessingRecipe}和{@link SequencedAssemblyRecipe}的多物品输出和流体输入输出也加入{@link me.shedaniel.rei.api.common.display.Display}的输入输出。
-     @param args {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier, List, List)}的参数
-     @param recipe0 {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)}的参数{@code recipe}
-     @param id {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)}的参数{@code id}
+     Add the multi-item output and fluid input and output of {@link ProcessingRecipe} and {@link SequencedAssemblyRecipe} to the input and output of {@link me.shedaniel.rei.api.common.display.Display}.
+     @param args {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier, List, List)}
+     @param recipe0 {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)} of {@code recipe}
+     @param id {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)} of parameter {@code id}
      */
     public static void improveStupidDisplay(Args args, Recipe<?> recipe0, CategoryIdentifier<CreateDisplay<Recipe<?>>> id) {
         if (recipe0 instanceof ProcessingRecipe<?> recipe) {
-            args.set(2, REICreates.ingredientsOf(recipe));
-            args.set(3, REICreates.resultsOf(recipe));
+            args.set(2, REICreateUtils.ingredientsOf(recipe));
+            args.set(3, REICreateUtils.resultsOf(recipe));
         } else if (recipe0 instanceof SequencedAssemblyRecipe recipe) {
             List<EntryIngredient> inputs = new LinkedList<>(EntryIngredients.ofIngredients(recipe.getIngredients()));
             List<EntryIngredient> outputs = new LinkedList<>();
             for (SequencedRecipe<?> sequencedRecipe : recipe.getSequence()) {
-                inputs.addAll(REICreates.ingredientsOf(sequencedRecipe));
-                outputs.addAll(REICreates.resultsOf(sequencedRecipe));
+                inputs.addAll(REICreateUtils.ingredientsOf(sequencedRecipe));
+                outputs.addAll(REICreateUtils.resultsOf(sequencedRecipe));
             }
             for (ProcessingOutput output : SequencedAssemblyRecipeInject.Interface.getResultPool(recipe)) {
                 outputs.add(EntryIngredients.of(output.getStack()));
