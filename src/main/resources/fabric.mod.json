@@ -29,8 +29,5 @@
     "java": ">=17",
     "roughlyenoughitems": "*",
     "create": "*"
-  },
-  "breaks": {
-    "createsdelight": "*"
   }
 }
