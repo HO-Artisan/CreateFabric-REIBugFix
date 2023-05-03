@@ -1,6 +1,6 @@
 /*
- * This file is licensed under the MIT License, part of Create's Delight.
- * Copyright (c) 2021~2023 Phoupraw
+ * This file is licensed under the MIT License, part of CreateFabric&REIBugFix.
+ * Copyright (c) 2023 TexTrue, HO-Artisan
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,27 +21,10 @@
  * SOFTWARE.
  */
 
-package ho.artisan.createreibugfix.mixin;
+package ho.artisan.createreibugfix.utils;
 
-import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRecipe;
-import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
-import ho.artisan.createreibugfix.utils.StringUtils;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import ho.artisan.createreibugfix.inject.SequencedAssemblyRecipeInject;
-
-import java.util.List;
-
-@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
-@Mixin(SequencedAssemblyRecipe.class)
-public abstract class SequencedAssemblyRecipeMixin implements SequencedAssemblyRecipeInject.Interface {
-    @Shadow(remap = false)
-    protected List<ProcessingOutput> resultPool;
-
-    @Override
-    public List<ProcessingOutput> getResultPool() {
-        return resultPool;
-    }
+public class StringUtils {
+    public static final String MODID = "createreibugfix";
+    public static final String MODNAME = "CreateFabric&REIBugFix";
+    public static final String createsdelight_modid = "createsdelight";
 }

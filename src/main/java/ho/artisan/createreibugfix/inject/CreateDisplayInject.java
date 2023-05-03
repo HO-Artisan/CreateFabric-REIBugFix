@@ -28,7 +28,7 @@ import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRe
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
 import com.simibubi.create.content.contraptions.processing.ProcessingRecipe;
-import ho.artisan.createreibugfix.api.REICreates;
+import ho.artisan.createreibugfix.utils.REICreateUtils;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
@@ -49,14 +49,14 @@ public final class CreateDisplayInject {
      */
     public static void improveStupidDisplay(Args args, Recipe<?> recipe0, CategoryIdentifier<CreateDisplay<Recipe<?>>> id) {
         if (recipe0 instanceof ProcessingRecipe<?> recipe) {
-            args.set(2, REICreates.ingredientsOf(recipe));
-            args.set(3, REICreates.resultsOf(recipe));
+            args.set(2, REICreateUtils.ingredientsOf(recipe));
+            args.set(3, REICreateUtils.resultsOf(recipe));
         } else if (recipe0 instanceof SequencedAssemblyRecipe recipe) {
             List<EntryIngredient> inputs = new LinkedList<>(EntryIngredients.ofIngredients(recipe.getIngredients()));
             List<EntryIngredient> outputs = new LinkedList<>();
             for (SequencedRecipe<?> sequencedRecipe : recipe.getSequence()) {
-                inputs.addAll(REICreates.ingredientsOf(sequencedRecipe));
-                outputs.addAll(REICreates.resultsOf(sequencedRecipe));
+                inputs.addAll(REICreateUtils.ingredientsOf(sequencedRecipe));
+                outputs.addAll(REICreateUtils.resultsOf(sequencedRecipe));
             }
             for (ProcessingOutput output : SequencedAssemblyRecipeInject.Interface.getResultPool(recipe)) {
                 outputs.add(EntryIngredients.of(output.getStack()));
