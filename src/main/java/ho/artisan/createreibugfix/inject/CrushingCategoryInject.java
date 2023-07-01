@@ -26,7 +26,7 @@ package ho.artisan.createreibugfix.inject;
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.rei.category.CrushingCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
-import com.simibubi.create.content.contraptions.components.crusher.AbstractCrushingRecipe;
+import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 import io.github.fabricators_of_create.porting_lib.util.FluidStack;
 import me.shedaniel.math.Point;

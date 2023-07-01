@@ -24,7 +24,7 @@
 package ho.artisan.createreibugfix.mixin;
 
 import com.simibubi.create.compat.rei.category.sequencedAssembly.ReiSequencedAssemblySubCategory;
-import com.simibubi.create.content.contraptions.itemAssembly.SequencedRecipe;
+import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 import ho.artisan.createreibugfix.utils.StringUtils;
 import me.fallenbreath.conditionalmixin.api.annotation.Condition;
@@ -44,10 +44,6 @@ import java.util.List;
 @Mixin(ReiSequencedAssemblySubCategory.AssemblySpouting.class)
 @Environment(EnvType.CLIENT)
 public class AssemblySpoutingMixin {
-//    @Redirect(method = "addFluidIngredients", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/api/common/util/EntryIngredients;of(Ldev/architectury/fluid/FluidStack;)Lme/shedaniel/rei/api/common/entry/EntryIngredient;"))
-//    private EntryIngredient fixInexplicableCode(FluidStack stack, SequencedRecipe<?> recipe, List<Widget> widgets, int x, int index, Point origin) {
-//        return PanFryingDisplay.of(recipe.getRecipe().getFluidIngredients().get(0));
-//    }
 
     @ModifyArg(method = "addFluidIngredients", at = @At(value = "INVOKE", target = "Ljava/util/List;get(I)Ljava/lang/Object;"), remap = false)
     private int fixIndex(int index) {

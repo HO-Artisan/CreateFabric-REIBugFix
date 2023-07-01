@@ -25,7 +25,7 @@ package ho.artisan.createreibugfix.mixin;
 
 import com.simibubi.create.compat.rei.category.BasinCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
-import com.simibubi.create.content.contraptions.processing.BasinRecipe;
+import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.utility.Pair;
 import ho.artisan.createreibugfix.utils.StringUtils;
