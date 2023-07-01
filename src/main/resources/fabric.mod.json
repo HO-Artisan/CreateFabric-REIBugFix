@@ -8,8 +8,8 @@
     "TexTrue, HO-Artisan, Phoupraw"
   ],
   "contact": {
-    "homepage": "https://github.com/HO-Artisan/Create-REIBugFix",
-    "sources": "https://github.com/HO-Artisan/Create-REIBugFix"
+    "homepage": "https://github.com/HO-Artisan/CreateFabric-REIBugFix",
+    "sources": "https://github.com/HO-Artisan/CreateFabric-REIBugFix"
   },
   "license": "MIT",
   "icon": "assets/createreibugfix/icon.png",
@@ -28,6 +28,6 @@
     "minecraft": "1.18.x",
     "java": ">=17",
     "roughlyenoughitems": "*",
-    "create": "*"
+    "create": "0.5.1"
   }
 }
