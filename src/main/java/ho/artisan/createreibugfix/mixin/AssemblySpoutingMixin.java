@@ -26,14 +26,19 @@ package ho.artisan.createreibugfix.mixin;
 import com.simibubi.create.compat.rei.category.sequencedAssembly.ReiSequencedAssemblySubCategory;
 
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
+
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 import ho.artisan.createreibugfix.utils.StringUtils;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
+
 import me.shedaniel.math.Point;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
