@@ -25,6 +25,7 @@ package ho.artisan.createreibugfix.inject;
 
 import com.simibubi.create.content.processing.recipe.ProcessingOutput;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
+
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.List;

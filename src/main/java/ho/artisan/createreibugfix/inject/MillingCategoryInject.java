@@ -26,14 +26,19 @@ package ho.artisan.createreibugfix.inject;
 import com.simibubi.create.compat.rei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
+
 import io.github.fabricators_of_create.porting_lib.util.FluidStack;
+
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+
 import net.minecraft.util.collection.DefaultedList;
+
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 
 import java.util.List;

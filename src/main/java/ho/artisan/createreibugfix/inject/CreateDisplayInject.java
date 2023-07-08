@@ -28,11 +28,15 @@ import com.simibubi.create.content.processing.recipe.ProcessingOutput;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
+
 import ho.artisan.createreibugfix.utils.REICreateUtils;
+
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
+
 import net.minecraft.recipe.Recipe;
+
 import org.jetbrains.annotations.ApiStatus;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
