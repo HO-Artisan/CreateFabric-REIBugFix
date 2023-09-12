@@ -1,6 +1,7 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
-	id "io.github.juuxel.loom-quiltflower" version "1.+"
+	id 'fabric-loom' version '1.3-SNAPSHOT'
+	id "io.github.juuxel.loom-vineflower" version "1.+"
+	id "io.github.p03w.machete" version "1.1.4"
 	id 'maven-publish'
 }
 
@@ -19,16 +20,20 @@ repositories {
 	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+
+	maven { url = "https://maven.quiltmc.org/repository/release" } // QM
+	maven { url = "https://maven.parchmentmc.org" } // Parchment
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings "org.quiltmc:quilt-mappings:${project.qm_version}:intermediary-v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation("com.simibubi.create:create-fabric-${project.minecraft_version}:${project.create_version}") {
 		exclude(Map.of("module", "forge-config-api-port-fabric-547434"))
+		exclude(group: "io.github.fabricators_of_create")
 	}
 	modImplementation "io.github.fabricators_of_create.Porting-Lib:Porting-Lib:${project.portinglib_version}"
 	modLocalRuntime "maven.modrinth:forge-config-api-port:${project.forgeconfigapiport_version}"

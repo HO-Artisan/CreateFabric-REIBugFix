@@ -180,8 +180,4 @@ public final class REICreateUtils {
         }
         return slot;
     }
-
-    private REICreateUtils() {
-
-    }
 }

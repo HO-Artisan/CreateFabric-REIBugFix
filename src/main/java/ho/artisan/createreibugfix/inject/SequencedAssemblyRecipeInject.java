@@ -38,8 +38,4 @@ public final class SequencedAssemblyRecipeInject {
         }
         List<ProcessingOutput> getResultPool();
     }
-
-    private SequencedAssemblyRecipeInject() {
-
-    }
 }

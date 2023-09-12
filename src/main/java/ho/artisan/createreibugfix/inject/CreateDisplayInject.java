@@ -46,10 +46,10 @@ import java.util.List;
 @ApiStatus.Internal
 public final class CreateDisplayInject {
     /**
-     把{@link ProcessingRecipe}和{@link SequencedAssemblyRecipe}的多物品输出和流体输入输出也加入{@link me.shedaniel.rei.api.common.display.Display}的输入输出。
-     @param args {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier, List, List)}的参数
-     @param recipe0 {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)}的参数{@code recipe}
-     @param id {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)}的参数{@code id}
+     Add the multi-item outputs and fluid inputs and outputs of {@link ProcessingRecipe} and {@link SequencedAssemblyRecipe} to the inputs and outputs of {@link me.shedaniel.rei.api.common.display}.
+     @param args arguments for {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier, List, List)}
+     @param recipe0 arguments for {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)} {@code recipe}
+     @param id arguments for {@link CreateDisplay#CreateDisplay(Recipe, CategoryIdentifier)} {@code id}
      */
     public static void improveStupidDisplay(Args args, Recipe<?> recipe0, CategoryIdentifier<CreateDisplay<Recipe<?>>> id) {
         if (recipe0 instanceof ProcessingRecipe<?> recipe) {
@@ -68,9 +68,5 @@ public final class CreateDisplayInject {
             args.set(2, inputs);
             args.set(3, outputs);
         }
-    }
-
-    private CreateDisplayInject() {
-
     }
 }
