@@ -26,5 +26,4 @@ package ho.artisan.createreibugfix.utils;
 public class StringUtils {
     public static final String MODID = "createreibugfix";
     public static final String MODNAME = "CreateFabric&REIBugFix";
-    public static final String createsdelight_modid = "createsdelight";
 }

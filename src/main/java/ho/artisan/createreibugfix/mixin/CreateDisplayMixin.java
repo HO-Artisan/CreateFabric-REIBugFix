@@ -26,21 +26,16 @@ package ho.artisan.createreibugfix.mixin;
 import com.simibubi.create.compat.rei.display.CreateDisplay;
 
 import ho.artisan.createreibugfix.inject.CreateDisplayInject;
-import ho.artisan.createreibugfix.utils.StringUtils;
 
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 
 import net.minecraft.recipe.Recipe;
-
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
-@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(CreateDisplay.class)
 public abstract class CreateDisplayMixin {
     @ModifyArgs(method = "<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;)V", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/compat/rei/display/CreateDisplay;<init>(Lnet/minecraft/recipe/Recipe;Lme/shedaniel/rei/api/common/category/CategoryIdentifier;Ljava/util/List;Ljava/util/List;)V"))

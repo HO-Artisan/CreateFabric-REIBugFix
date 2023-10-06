@@ -29,7 +29,6 @@ import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingOutput;
 
 import ho.artisan.createreibugfix.inject.CrushingCategoryInject;
-import ho.artisan.createreibugfix.utils.StringUtils;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -40,9 +39,6 @@ import net.fabricmc.api.Environment;
 
 import org.objectweb.asm.Opcodes;
 
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -52,7 +48,6 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
 
-@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(CrushingCategory.class)
 @Environment(EnvType.CLIENT)
 public class CrushingCategoryMixin {

@@ -37,8 +37,5 @@ public class CreateFabricREIBugFixMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info(StringUtils.MODNAME + " (" + StringUtils.MODID + ") " + " is loaded!");
-		if (FabricLoader.getInstance().isModLoaded(StringUtils.createsdelight_modid)) {
-			LOGGER.warn(StringUtils.MODNAME + "incompatibility with Creates Delight!");
-		}
 	}
 }

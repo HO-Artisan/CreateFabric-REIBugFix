@@ -38,7 +38,6 @@ dependencies {
 	modImplementation "io.github.fabricators_of_create.Porting-Lib:Porting-Lib:${project.portinglib_version}"
 	modLocalRuntime "maven.modrinth:forge-config-api-port:${project.forgeconfigapiport_version}"
 
-	include(modImplementation("com.github.Fallen-Breath:conditional-mixin:${project.conditionalmixin_version}"))
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 }
 
